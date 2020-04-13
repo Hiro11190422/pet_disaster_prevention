@@ -1,0 +1,123 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<meta http-equiv="Content-Security-Policy" content="default-src * data: gap: content: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+	<script src="components/loader.js"></script>
+	<link rel="stylesheet" href="components/loader.css">
+	<link rel="stylesheet" href="css/style.css">
+
+</head>
+<script>
+          function alertDebug(arg) {
+         //alert(arg);   // ﾃﾞﾊﾞｯｸﾞ時に有効化すると良い
+      }
+ 
+      function save_restore1_checkbox(target_class) {
+         var cbstate;
+ 
+         window.addEventListener('load', function () {
+            cbstate = JSON.parse(localStorage['CBState'] || '{}');
+            alertDebug('cbstate = ' + JSON.stringify(cbstate));
+            for (var key in cbstate) { // cbstateはobjectで、このようにforﾙｰﾌﾟすると var key はobjectのｷｰが来るのだ。知らなんだ。
+               alertDebug('key=' + key);
+               var el_lst = document.querySelectorAll('input[data-savekey="' + key + '"].' + target_class);
+               set_checkbox_checked_all(el_lst, true);
+            }
+ 
+            var cb = document.getElementsByClassName(target_class);
+            alertDebug('cb = ' + JSON.stringify(cb));
+ 
+            for (var c = 0; c < cb.length; c++) {
+               alertDebug('cb[' + c + ']:name=' + cb[c].name + ', value=' + cb[c].value);
+ 
+               cb[c].addEventListener('click', function (evt) {
+                  var savekey = this.getAttribute('data-savekey');
+                  alertDebug('click:savekey_value=' + savekey + ', checked=' + this.checked);
+                  if (this.checked) {
+                     cbstate[savekey] = true;
+                  }
+                  else if (cbstate[savekey]) {
+                     delete cbstate[savekey];
+                  }
+                  localStorage['CBState'] = JSON.stringify(cbstate);
+               });
+            }
+         });
+ 
+         function set_checkbox_checked_all(el_lst, checked) {
+            for (var c = 0; c < el_lst.length; c++) {
+               var el = el_lst[c];
+               alertDebug('el=' + JSON.stringify(el) + ' ,el.name=' + el.name);
+               if (el) {
+                  alertDebug('el.checked=' + el.checked);
+                  el.checked = checked;
+               }
+            }
+         }
+      }
+      save_restore1_checkbox('save-state1');
+      var date=new Date();
+      localStorage.setItem("ck",date);
+	</script>
+<body>
+    
+	<h1>
+		備蓄品の用意
+	</h1>
+	<hr size="5" noshade>
+	<a onclick="window.history.back(); " class="btn-square-pop ">戻る</a>
+	<h3>
+		・避難指示等が出た場合、安全に避難場所まで避難できるように、リードやキャリーバッグ等の避難用品を準備しておく必要があります。<br> ・また、動物の命や健康にかかわるものを最優先にし、優先順位をつけて優先度の高いものからすぐに持ち出せるように準備しておきましょう。
+	</h3>
+	<h2>
+		災害時に持ち出すもの
+	</h2>
+	<h3>
+		<font color="ff0000">【優先順位１】</font><br>
+         ＊ペットの健康や命にかかわるものを<br>
+         　最優先に
+	</h3>
+		<h3>
+			<label><input type="checkbox" name="item[]" value="1" data-savekey="1" class="save-state1">療法食、薬</label><br>
+			<label><input type="checkbox" name="item[]" value="2" data-savekey="2" class="save-state1">フード、水<br>
+            　※ペット用救援物資が届くまでに時間が<br>
+            　　かかることがあるので最低５日分</label><br>
+			<label><input type="checkbox" name="item[]" value="3" data-savekey="3" class="save-state1">予備の首輪、リード<br>
+            　（伸びないものがよい）</label><br>
+			<label><input type="checkbox" name="item[]" value="4" data-savekey="4" class="save-state1">食器</label><br>
+			<label><input type="checkbox" name="item[]" value="5" data-savekey="5" class="save-state1">ガムテープ<br>
+            　（ケージの補修などに使用可能）</label><br>
+		</h3>
+	<h3>
+		<font color="ff0000">【優先順位２】</font><br> ＊飼い主やペットの情報を<br>
+        　記録したものがあれば、<br>
+        　ペットを探すときに役立ちます。
+	</h3>
+		<h3>
+			<label><input type="checkbox" name="item[]" value="6" data-savekey="6" class="save-state1">飼い主の連絡先</label><br>
+			<label><input type="checkbox" name="item[]" value="7" data-savekey="7" class="save-state1">ペットの写真<br>
+            　（飼い主と一緒に撮った写真などは、<br>
+            　飼い主を特定するのに役立つ）</label><br>
+			<label><input type="checkbox" name="item[]" value="8" data-savekey="8" class="save-state1">既往症・健康状態</label><br>
+			<label><input type="checkbox" name="item[]" value="9" data-savekey="9" class="save-state1">かかりつけの動物病院</label><br>
+			<label><input type="checkbox" name="item[]" value="10" data-savekey="10" class="save-state1">ワクチン接種</label><br>
+		</h3>
+	<h3>
+		<font color="ff0000">【優先順位３】</font><br> ＊ペット用品など
+	</h3>
+		<h3>
+			<label><input type="checkbox" name="item[]" value="11" data-savekey="11" class="save-state1">ペットシーツ</label><br>
+			<label><input type="checkbox" name="item[]" value="12" data-savekey="12" class="save-state1">排泄物処理用品</label><br>
+			<label><input type="checkbox" name="item[]" value="13" data-savekey="13" class="save-state1">トイレ用品（猫の場合はトイレ砂）</label><br>
+			<label><input type="checkbox" name="item[]" value="14" data-savekey="14" class="save-state1">タオル</label><br>
+			<label><input type="checkbox" name="item[]" value="15" data-savekey="15" class="save-state1">ブラシ</label><br>
+			<label><input type="checkbox" name="item[]" value="16" data-savekey="16" class="save-state1">洗濯ネット（猫の場合）</label><br>
+			<label><input type="checkbox" name="item[]" value="17" data-savekey="17" class="save-state1">おもちゃなど</label><br>
+		</h3>
+
+	<a onclick="window.history.back(); " class="btn-square-pop ">戻る</a>
+</body>
+</html>

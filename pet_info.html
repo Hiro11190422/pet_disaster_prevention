@@ -1,0 +1,90 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<meta http-equiv="Content-Security-Policy" content="default-src * data: gap: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+	<link rel="stylesheet" href="components/loader.css">
+	<link rel="stylesheet" href="css/style.css">
+	<script src="components/loader.js"></script>
+	<script src="js/pet_info.js"></script>
+	<script>
+
+	</script>
+</head>
+
+<body>
+	<a onclick="window.history.back(); " class="btn-square-pop ">戻る</a>
+	<!-- <a onclick="register()" class="btn-square-pop ">保存</a>
+	<a onclick="delet()" class="btn-square-pop ">local削除</a>
+	<a onclick="load_pet_info()" class="btn-square-pop ">local読み込み</a>
+    <a onclick="img()" class="btn-square-pop ">画像表示</a> -->
+	<h3>いざと言う時のために、ペットの情報をまとめておきましょう</h3>
+	<b>また、入力をしながら確認と準備に役立ててください</b>
+    <a href="#reason_for_input">入力の目的について</a>
+	<div id="pet_info">
+		<p>ペットの写真１（顔アップ）
+			<input type="file" name="upload_file1" id="upload_file1" class="data file1" accept="image/*" onchange="img()" /><br>
+			<div id="preview_area1"></div>
+		</p>
+		<p>ペットの写真２（全身：特徴がわかる）
+			<input type="file" name="upload_file2" id="upload_file2" class="data file2" accept="image/*" onchange="img2()" />
+			<div id="preview_area2"></div>
+		</p>
+		<p>ペットの名前
+			<input type="text" name="name"></p>
+		<p>性別
+			<input type="radio" name="sex" value="オス" id="upload_file3"> オス
+			<input type="radio" name="sex" value="メス" id="upload_file4"> メス</p>
+		<p>不妊去勢
+			<input type="radio" name="castration" value="済み" id="upload_file5"> 済み
+			<input type="radio" name="castration" value="未処置" id="upload_file6"> 未処置</p>
+		<p>種類
+			<input type="text" name="genre" id="upload_file7"></p>
+		<p>毛色
+			<input type="text" name="color" id="upload_file8"></p>
+		<p>生年月日
+			<input type="date" name="birth"><span id="age" id="upload_file9"></span></p>
+		<p>体重
+			<input type="text" name="weight" id="upload_file10"></p>
+		<p>
+			<a href="maigo.html">マイクロチップ</a><br>
+			<input type="radio" name="micro" value="済み" id="upload_file11"> 済み→番号<input type="text" name="micro_no" id="upload_file12">
+			<input type="radio" name="micro" value="未処置" id="upload_file13"> 未処置</p>
+		<p>鑑札番号（犬）
+			<input type="text" name="dog_no" id="upload_file14"></p>
+		<p>
+			<a href="kenko.html">ワクチン接種</a><br>
+			<input type="radio" name="vaccine" value="済み" id="upload_file15"> 済み→種類<input type="text" name="vaccine_name" id="upload_file16">
+			<input type="radio" name="vaccine" value="未処置" id="upload_file17"> 未処置</p>
+		最近のワクチン接種日<input type="date" name="vaccine_date" id="upload_file18"></p>
+		<p>既往症<br> （持病、飲んでる薬、アレルギーなど）
+			<textarea name="preexisting_illness" rows="5" id="upload_file19"></textarea></p>
+		<p>性格<br>
+			<textarea name="personality" rows="5" id="upload_file20"></textarea></p>
+		<p>特徴<br>
+			<textarea name="characteristic" rows="5" id="upload_file21"></textarea></p>
+
+		<div class="button_wrapper">
+			<p><button class="register_button" onclick="register()">登録</button></p>
+		</div>
+	</div>
+	<div id="reason_for_input">
+		＜入力の目的＞</br>
+		被災前：
+		<ol>
+			<li>入力をしながら、同行避難の意識と準備を行ってもらえるように</li>
+		</ol>
+		被災後：
+		<ol>
+			<li>離れ離れになってしまった際の情報として</li>
+			<li>避難所での手続きの際の資料として</li>
+		</ol>
+	</div>
+
+
+	<a onclick="window.history.back(); " class="btn-square-pop ">戻る</a>
+</body>
+
+</html>

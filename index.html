@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<meta http-equiv="Content-Security-Policy" content="default-src * data: gap: content: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+	<script src="components/loader.js"></script>
+	<link rel="stylesheet" href="components/loader.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+	<!-- <img src="top.png" width="100%"> -->
+	<img src="bottom.png" width="100%">
+	<h2>
+		災害発生時の<br> ペット同行避難について
+	</h2>
+	<hr size="5" noshade>
+    <div id="bitiku-ck">
+		<a href="bitiku.html">避難準備をしてください</a>
+	</div>
+	<div class="menu">
+		<h2>
+            <a href="pet_info.html" class="btn-square-shadow"> ペットの情報</a><br><br>
+			<a href="index2.html" class="btn-square-shadow"> 普段から心がけておくこと</a><br><br>
+			<a href="saigaiji.html" class="btn-square-shadow">災　害　時 　の　 対　応</a><br><br>
+			<a href="saihatu.html" class="btn-square-shadow-red"> 災害が発生したときの行動 </a><br><br>
+			<a href="shiryou.html" class="btn-square-shadow">資　　　　　料</a>
+		</h2>
+	</div>
+	<!-- <img src="bottom.png" width="100%"> -->
+
+	<script>
+		var ck=localStorage.getItem("ck");
+        if(ck){
+            var now=new Date;
+            var elapsed_time=Math.ceil((now-new Date(ck))/86400000);
+            if(elapsed_time<=5){
+                document.getElementById("bitiku-ck").innerHTML="前回の備蓄から"+elapsed_time+"日経過"+"　→　<a href='bitiku.html'>確認する</a>";
+            }else{
+                document.getElementById("bitiku-ck").innerHTML="前回の備蓄から"+elapsed_time+"日経過"+"<a href='bitiku.html'>備蓄の確認をしましょう</a>";
+            }
+        }else{
+            document.getElementById("bitiku-ck").innerHTML="<a href='bitiku.html'>避難準備を始めましょう</a>"
+        }
+	</script>
+</body>
+
+</html>

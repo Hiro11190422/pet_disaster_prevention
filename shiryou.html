@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="Content-Security-Policy" content="default-src * data: gap: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+    <link rel="stylesheet" href="components/loader.css">
+    <script src="components/loader.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+        //
+        // TODO: Write JavaScript code here
+        //
+    </script>
+</head>
+<body>
+    ペット同行避難についてのスライド
+
+    <img id="mypic" onclick="slideshow()" src="11PPTp1.png" width="100%" height="100%">
+	<script>
+		var pics_src = new Array("11PPTp1.png","./1.png","./2.png","./3.png","./4.png","./5.png","./6.png","./7.png","./8.png","./9.png","./10.png","./11.png");
+            var num = 0;
+ 
+            function slideshow(){
+                if (num == 11) {
+                    num = 0;
+                }
+                else {
+                    num ++;
+                }
+                document.getElementById("mypic").src=pics_src[num];
+            }
+	</script>
+	R1,12,01　焼津市での避難訓練にて<br><br>
+    <a href="index.html" class="btn-square-pop">ホームへ戻る</a>
+</body>
+</html>

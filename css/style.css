@@ -1,0 +1,277 @@
+html,body{
+    background-image: url("white.jpg");
+    color: #383838;
+    font-size:20px; 
+    width:98%;
+    height: 100%;
+}
+.btn-square-pop {
+  position: relative;
+  display: inline-block;
+  padding: 0.25em 0.5em;
+  text-decoration: none;
+  color: #FFF;
+  background: #fd9535;/*背景色*/
+  border-bottom: solid 2px #d27d00;/*少し濃い目の色に*/
+  border-radius: 4px;/*角の丸み*/
+  box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), 0 2px 2px rgba(0, 0, 0, 0.19);
+  font-weight: bold;
+}
+
+.btn-square-pop:active {
+  border-bottom: solid 2px #fd9535;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.30);
+}
+
+.btn-circle-stitch {
+  display: inline-block;
+  text-decoration: none;
+  background: #87befd;
+  color: #FFF;
+  width: 120px;
+  height: 120px;
+  line-height: 120px;
+  border-radius: 50%;
+  text-align: center;
+  overflow: hidden;
+  box-shadow: 0px 0px 0px 5px #87befd;
+  border: dashed 1px #FFF;
+  transition: .4s;
+}
+
+.btn-circle-stitch:hover {
+  background: #668ad8;
+  box-shadow: 0px 0px 0px 5px #668ad8;
+}
+
+.inline-block_test {
+    display: inline-block;      /* インラインブロック要素にする */
+    padding: 50px;              /* 余白指定 */
+}
+
+.bar2 {
+  display:block;
+  width: 100%;
+  height: 1px;
+  border: 0;
+  border-top: 1px dashed #cccccc;
+}
+
+.button--large {
+  text-align: center;
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  background: transparent;
+  border: none;
+  font-family: 'Helvetica Neue', Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  cursor: default;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  height: auto;
+  text-decoration: none;
+  padding: 4px 20px;
+  font-size: 16px;
+  line-height: 36px;
+  letter-spacing: 0;
+  color: #fff;
+  text-shadow: 0 1px none;
+  vertical-align: middle;
+  background-color: #1284ff;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border: none;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-transition: background-color 0.2s linear, color 0.2s linear, opacity 0.2s linear;
+  -moz-transition: background-color 0.2s linear, color 0.2s linear, opacity 0.2s linear;
+  -o-transition: background-color 0.2s linear, color 0.2s linear, opacity 0.2s linear;
+  transition: background-color 0.2s linear, color 0.2s linear, opacity 0.2s linear;
+  font-weight: 400;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 36px;
+  padding: 4px 20px;
+  display: block;
+  width: 100%;
+}
+.button--large:active {
+  background-color: #1284ff;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  color: #fff;
+  -webkit-transition: none;
+  -moz-transition: none;
+  -o-transition: none;
+  transition: none;
+  opacity: 0.6;
+  -webkit-transition: none;
+  -moz-transition: none;
+  -o-transition: none;
+  transition: none;
+}
+.button--large:disabled {
+  opacity: 0.3;
+  cursor: default;
+  pointer-events: none;
+}
+.button--large:hover {
+  -webkit-transition: none;
+  -moz-transition: none;
+  -o-transition: none;
+  transition: none;
+}
+.button--large:focus {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  outline: 0;
+}
+
+.size_test {
+    font-size:  60px;
+}
+
+.btn-border-bottom {
+  position: relative;
+  display: inline-block;
+  font-weight: bold;
+  padding: 0.25em 0;
+  text-decoration: none;
+  color: #67c5ff;  
+}
+
+.btn-border-bottom:before {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 4px;
+  top:100%;
+  left: 0;
+  border-radius: 3px;
+  background:#67c5ff;
+  transition: .2s;
+}
+
+.btn-border-bottom:hover:before {
+  top: -webkit-calc(100% - 3px);
+  top: calc(100% - 3px);
+}
+
+/* .body{
+  height: 200px;
+  position: relative;
+} */
+.position-absolute{
+  position: absolute; 
+  top: 10%;
+  right: 0;
+  bottom: 0;
+  left: 1.5%;
+  /* margin: auto; */
+  width: 98.5%;
+  height: 10%; 
+}
+
+#mozi{
+    font-size:240%;
+}
+
+#pet{
+    color:red;
+    font-size:250%;
+}
+
+.sub-link{
+    display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  background: #f7f7f7;
+  border-left: solid 6px #ff7c5c;/*左線*/
+  color: #ff7c5c;/*文字色*/
+  font-weight: bold;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
+}
+.sub-link:active {
+  box-shadow: inset 0 0 2px rgba(128, 128, 128, 0.1);
+  transform: translateY(2px);
+}
+
+.btn-square-shadow {
+  width:70%;
+  display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  background: #668ad8;/*ボタン色*/
+  color: #FFF;
+  border-bottom: solid 4px #627295;
+  border-radius: 3px;
+}
+.btn-square-shadow:active {
+  /*ボタンを押したとき*/
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);/*下に動く*/
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);/*影を小さく*/
+  border-bottom: none;
+}
+.btn-square-shadow-red {
+  width:70%;
+  display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  background: #e74747;/*ボタン色*/
+  color: #FFF;
+  border-bottom: solid 4px #627295;
+  border-radius: 3px;
+}
+.btn-square-shadow-red:active {
+  /*ボタンを押したとき*/
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);/*下に動く*/
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);/*影を小さく*/
+  border-bottom: none;
+}
+.menu{
+    text-align: center;
+}
+
+.save-state1{
+    font-size:20px;
+}
+
+/*-------------------  pet_info.html*/
+input{
+    font-size: 20px;
+}
+textarea{
+    width:90%;
+    height: 100%;
+    font-size:20px;
+}
+.button_wrapper{
+    text-align: center;
+}
+button.register_button{
+    width:90%;
+    height: 20%;
+    font-size:30px;
+    background-color: #248;
+    color: #fff;
+    border-style: none;
+}
